@@ -26,7 +26,7 @@ class CustomTextButton extends BaseButton {
           if (prefixWidget != null) prefixWidget!,
           Text(
             text,
-            style: TextThemeHelper.black_8_400,
+            style: TextThemeHelper.bodySmallBlack400Inter8,
           ),
           if (suffixWidget != null) suffixWidget!,
         ],

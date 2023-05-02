@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import 'color_constant.dart';
+import 'app_color_helper.dart';
 
 class AppThemes {
   static var isDarkTheme = false;
@@ -21,50 +21,50 @@ class AppThemes {
     ),
     brightness: Brightness.light,
     platform: Platform.isAndroid ? TargetPlatform.android : TargetPlatform.iOS,
-    primaryColor: ColorConstant.whiteA700,
+    primaryColor: ColorConstant.white,
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    dividerTheme: DividerThemeData(color: ColorConstant.gray50, thickness: 1),
+    dividerTheme: const DividerThemeData(color: ColorConstant.gray, thickness: 1),
     // Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
     outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
             textStyle: MaterialStateProperty.all<TextStyle>(
-                TextStyle(color: ColorConstant.black900)),
+                const TextStyle(color: ColorConstant.blackOlive)),
             padding: MaterialStateProperty.all<EdgeInsets>(
                 const EdgeInsets.all(4.0)))),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       displayLarge:
-          const TextStyle(fontSize: 72.0, fontWeight: FontWeight.w500),
+          TextStyle(fontSize: 72.0, fontWeight: FontWeight.w500),
       headlineMedium: TextStyle(
           fontSize: 24,
-          color: ColorConstant.black900,
+          color: ColorConstant.blanchedAlmond,
           fontWeight: FontWeight.w500,
           fontFamily: 'Manrope'),
       titleLarge:
-          const TextStyle(fontSize: 36.0, fontWeight: FontWeight.normal),
+          TextStyle(fontSize: 36.0, fontWeight: FontWeight.normal),
       titleSmall: TextStyle(
           fontSize: 18.0,
-          color: ColorConstant.black900,
+          color: ColorConstant.black,
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
       titleMedium: TextStyle(
           fontSize: 16.0,
-          color: ColorConstant.black900,
+          color: ColorConstant.blackNeutral2,
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
       bodyLarge: TextStyle(
           fontSize: 14.0,
-          color: ColorConstant.black900,
+          color: ColorConstant.blackNeutral3,
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
       bodyMedium: TextStyle(
           fontSize: 12.0,
-          color: ColorConstant.black900,
+          color: ColorConstant.blackOlive,
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
       bodySmall: TextStyle(
           fontSize: 8.0,
-          color: ColorConstant.black900,
+          color: ColorConstant.blackOut,
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
     ),
