@@ -13,6 +13,12 @@ class TextThemeHelper {
     fontFamily: "Inter",
   );
 
+  static TextStyle white_8_400 = theme.textTheme.bodySmall!.copyWith(
+    fontWeight: FontWeight.w400,
+    fontFamily: "Inter",
+    color: ColorConstant.whiteA700
+  );
+
   static get manropeBold16White700 => theme.textTheme.titleMedium!.copyWith(
         color: ColorConstant.whiteA700,
       );

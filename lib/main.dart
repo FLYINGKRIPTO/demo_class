@@ -1,5 +1,8 @@
 import 'package:demo_class_project/app_theme.dart';
+import 'package:demo_class_project/custom_text_button.dart';
 import 'package:flutter/material.dart';
+
+import 'custom_outlined_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -85,12 +88,29 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            CustomTextButton(
+              text: "Text Button",
+              onTap: () {
+                const snackBar = SnackBar(
+                  content: Text('Tapped Text Button'),
+                );
+
+// Find the ScaffoldMessenger in the widget tree
+// and use it to show a SnackBar.
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              },
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const SizedBox(
+              height: 12,
+            ),
+            CustomOutlinedButton(
+              text: "Outline Button",
+              onTap: () {
+                const snackBar = SnackBar(
+                  content: Text('Tapped Outlined Button'),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              },
             ),
           ],
         ),

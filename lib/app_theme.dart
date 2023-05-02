@@ -26,6 +26,12 @@ class AppThemes {
     dividerTheme: DividerThemeData(color: ColorConstant.gray50, thickness: 1),
     // Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
+    outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+            textStyle: MaterialStateProperty.all<TextStyle>(
+                TextStyle(color: ColorConstant.black900)),
+            padding: MaterialStateProperty.all<EdgeInsets>(
+                const EdgeInsets.all(4.0)))),
     textTheme: TextTheme(
       displayLarge:
           const TextStyle(fontSize: 72.0, fontWeight: FontWeight.w500),
