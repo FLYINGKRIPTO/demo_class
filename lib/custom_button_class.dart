@@ -6,8 +6,6 @@ import 'button_theme_helper.dart';
 class NewCustomButton extends StatelessWidget {
   final Alignment? alignment;
 
-  final EdgeInsetsGeometry? margin;
-
   final VoidCallback? onTap;
 
   final String text;
@@ -19,7 +17,6 @@ class NewCustomButton extends StatelessWidget {
   const NewCustomButton(
       {Key? key,
       this.alignment,
-      this.margin,
       this.onTap,
       required this.text,
       this.prefixWidget,
@@ -28,9 +25,7 @@ class NewCustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: margin,
-      child: TextButton(
+    return TextButton(
         onPressed: onTap,
         style: ButtonThemeHelper.black_8_400,
         child: Row(
@@ -44,7 +39,6 @@ class NewCustomButton extends StatelessWidget {
             if (suffixWidget != null) suffixWidget!,
           ],
         ),
-      ),
-    );
+      );
   }
 }
