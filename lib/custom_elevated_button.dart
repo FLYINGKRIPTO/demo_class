@@ -1,6 +1,8 @@
 import 'package:demo_class_project/base_button.dart';
 import 'package:flutter/material.dart';
 
+/// Button which extends [BaseButton] class and returns an returns an [ElevatedButton[ widget
+
 class CustomElevatedButton extends BaseButton {
   const CustomElevatedButton({
     Key? key,
@@ -19,7 +21,7 @@ class CustomElevatedButton extends BaseButton {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: buttonStyle,
-      onPressed: super.onTap,
+      onPressed: onTap,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

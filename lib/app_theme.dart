@@ -4,10 +4,19 @@ import 'package:flutter/material.dart';
 
 import 'app_color_helper.dart';
 
+///This code file contains the AppThemes class which provides the default light theme
+///for the app using ThemeData.
+///It also defines a ColorScheme for both the light and dark themes used in the app.
+///The lightColorScheme and darkColorScheme provide a set of predefined colors for various components in the app.
+///The getTheme() method returns the default light theme.
+
+
 class AppThemes {
   static var isDarkTheme = false;
   static const _lightFillColor = Colors.black;
   static const _darkFillColor = Colors.white;
+  static const int _primaryColor = 0xFFFF6300;
+  static const int textFieldColor = 0xFFF4F4F4;
 
   static var appLightTheme = ThemeData(
     colorScheme: isDarkTheme ? darkColorScheme : lightColorScheme,

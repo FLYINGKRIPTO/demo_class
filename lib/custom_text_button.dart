@@ -1,6 +1,8 @@
 import 'package:demo_class_project/base_button.dart';
 import 'package:flutter/material.dart';
 
+/// Button which extends [BaseButton] class and returns an returns an [TextButton[ widget
+
 class CustomTextButton extends BaseButton {
   final Widget? prefixWidget;
   final Widget? suffixWidget;
@@ -21,7 +23,7 @@ class CustomTextButton extends BaseButton {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: super.onTap,
+      onPressed: onTap,
       style: buttonStyle,
       child: Row(
         mainAxisSize: MainAxisSize.min,

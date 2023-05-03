@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
 
+/// Helper class, acts as dictionary for all text styles used in the app
+
 class TextThemeHelper {
   static const String TAG = "TextThemeHelper";
 
@@ -14,6 +16,6 @@ class TextThemeHelper {
         color: ColorConstant.lavender,
       );
 
-  static get bodySmallWhite800 => theme.textTheme.bodySmall!
-      .copyWith(fontWeight: FontWeight.w800, color: ColorConstant.white);
+  static get bodySmallWhite800 => bodySmallBlack400.copyWith(
+      fontWeight: FontWeight.w800, color: ColorConstant.white);
 }
