@@ -15,7 +15,6 @@ class AppThemes {
   static var isDarkTheme = false;
   static const _lightFillColor = Colors.black;
   static const _darkFillColor = Colors.white;
-  static const int _primaryColor = 0xFFFF6300;
   static const int textFieldColor = 0xFFF4F4F4;
 
   static var appLightTheme = ThemeData(
@@ -62,7 +61,7 @@ class AppThemes {
       titleLarge:
           TextStyle(fontSize: 36.0, fontWeight: FontWeight.normal),
       titleSmall: TextStyle(
-          fontSize: 18.0,
+          fontSize: 12.0,
           color: ColorConstant.black,
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
@@ -83,7 +82,7 @@ class AppThemes {
           fontFamily: 'Manrope'),
       bodySmall: TextStyle(
           fontSize: 8.0,
-          fontWeight: FontWeight.normal,
+          fontWeight: FontWeight.w400,
           fontFamily: 'Manrope'),
     ),
   );

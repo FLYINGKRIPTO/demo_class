@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override
@@ -104,6 +105,16 @@ class _MyHomePageState extends State<MyHomePage> {
               text: "Elevated Button",
               onTap: () {},
               buttonStyle: ButtonThemeHelper.elevatedButtonWhite,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Icon(Icons.access_alarm_outlined),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Text("Elevated Button")
+                ],
+              ),
             )
           ],
         ),

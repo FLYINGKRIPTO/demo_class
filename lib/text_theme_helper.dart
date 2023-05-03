@@ -12,9 +12,9 @@ class TextThemeHelper {
 
   static get bodySmallBlack400 => theme.textTheme.bodySmall!.copyWith(
         fontWeight: FontWeight.w400,
-        color: ColorConstant.lavender,
+        color: ColorConstant.black,
       );
 
-  static get bodySmallWhite800 => theme.textTheme.bodySmall!.copyWith(
-      fontWeight: FontWeight.w800, color: ColorConstant.white);
+  static get bodySmallWhite800 => theme.textTheme.bodySmall!
+      .copyWith(fontWeight: FontWeight.w800, color: ColorConstant.white);
 }
