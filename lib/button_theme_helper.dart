@@ -30,6 +30,19 @@ class ButtonThemeHelper {
       textStyle:
           MaterialStateProperty.all(TextThemeHelper.displaySmallGreen600));
 
+  /// Optional way where the function can serve as common function to return expected style
+  static elevatedButtonStyle({Color? color, double? elevation, TextStyle? textStyle,  Alignment? alignment}){
+    return theme.elevatedButtonTheme.style!.copyWith(
+        backgroundColor: MaterialStateProperty.all<Color>(
+          color ?? theme.primaryColor
+        ),
+        elevation: MaterialStateProperty.all(
+          elevation,
+        ),
+        textStyle:
+        MaterialStateProperty.all(textStyle));
+  }
+
   static get elevatedButtonBlack => theme.elevatedButtonTheme.style!.copyWith(
       backgroundColor:
           MaterialStateProperty.all<Color>(ColorConstant.blanchedAlmond));
