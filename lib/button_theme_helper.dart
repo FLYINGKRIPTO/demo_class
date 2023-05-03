@@ -19,7 +19,8 @@ class ButtonThemeHelper {
           TextThemeHelper.bodySmallWhite800));
 
   static get outlineButtonWhite => theme.outlinedButtonTheme.style!.copyWith(
-      backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.white));
+      backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.white),
+  );
 
   static get elevatedButtonWhite => theme.elevatedButtonTheme.style!.copyWith(
           backgroundColor: MaterialStateProperty.all<Color>(
