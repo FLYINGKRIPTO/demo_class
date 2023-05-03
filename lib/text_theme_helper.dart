@@ -8,17 +8,12 @@ class TextThemeHelper {
 
   static ThemeData theme = AppThemes.getTheme();
 
-  static TextStyle bodySmallBlack400Inter8 = theme.textTheme.bodySmall!.copyWith(
-    fontWeight: FontWeight.w400,
-    fontFamily: "Inter",
-    color: ColorConstant.black,
-    fontSize: 8
-  );
+  static get bodySmallBlack400 => theme.textTheme.bodySmall!.copyWith(
+        fontWeight: FontWeight.w400,
+        fontFamily: "Manrope",
+        color: ColorConstant.lavender,
+      );
 
-  static TextStyle bodySmallWhite400Inter8 = theme.textTheme.bodySmall!.copyWith(
-    fontWeight: FontWeight.w400,
-    fontFamily: "Inter",
-    color: ColorConstant.white
-  );
-
+  static get bodySmallWhite800 => theme.textTheme.bodySmall!
+      .copyWith(fontWeight: FontWeight.w800, color: ColorConstant.white);
 }

@@ -21,7 +21,6 @@ class AppThemes {
     ),
     brightness: Brightness.light,
     platform: Platform.isAndroid ? TargetPlatform.android : TargetPlatform.iOS,
-    primaryColor: ColorConstant.white,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     dividerTheme: const DividerThemeData(color: ColorConstant.gray, thickness: 1),
     // Define the default TextTheme. Use this to specify the default
@@ -32,7 +31,18 @@ class AppThemes {
                 const TextStyle(color: ColorConstant.blackOlive)),
             padding: MaterialStateProperty.all<EdgeInsets>(
                 const EdgeInsets.all(4.0)))),
-    textTheme: const TextTheme(
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        textStyle: MaterialStateProperty.all<TextStyle>(
+            const TextStyle(color: ColorConstant.strongYellow)),
+      )
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.lavender),
+      )
+    ),
+    textTheme:  const TextTheme(
       displayLarge:
           TextStyle(fontSize: 72.0, fontWeight: FontWeight.w500),
       headlineMedium: TextStyle(
@@ -64,7 +74,6 @@ class AppThemes {
           fontFamily: 'Manrope'),
       bodySmall: TextStyle(
           fontSize: 8.0,
-          color: ColorConstant.blackOut,
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
     ),
