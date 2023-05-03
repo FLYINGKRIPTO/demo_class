@@ -11,7 +11,9 @@ class BaseButton extends StatelessWidget {
   final String text;
   final VoidCallback? onTap;
   final ButtonStyle? buttonStyle;
+  final ButtonStyle? disabledButtonStyle;
   final TextStyle? buttonTextStyle;
+  final bool? isDisabled;
 
   const BaseButton({
     Key? key,
@@ -19,6 +21,8 @@ class BaseButton extends StatelessWidget {
     this.onTap,
     this.buttonStyle,
     this.buttonTextStyle,
+    this.isDisabled = false,
+    this.disabledButtonStyle
   }) : super(key: key);
 
   @override

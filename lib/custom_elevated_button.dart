@@ -12,6 +12,8 @@ class CustomElevatedButton extends BaseButton {
     Key? key,
     VoidCallback? onTap,
     ButtonStyle? buttonStyle,
+    ButtonStyle? disabledButtonStyle,
+    bool? isDisabled,
     this.child,
     required String text,
   }) : super(
@@ -19,13 +21,15 @@ class CustomElevatedButton extends BaseButton {
           text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,
+          isDisabled: isDisabled,
+          disabledButtonStyle: disabledButtonStyle,
         );
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: buttonStyle,
-      onPressed: onTap,
+      style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
+      onPressed: (isDisabled ?? false) ? () {} : onTap,
       child: child ??
           Text(
             text,

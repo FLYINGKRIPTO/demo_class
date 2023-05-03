@@ -7,10 +7,13 @@ import 'package:flutter/material.dart';
 
 class CustomOutlinedButton extends BaseButton {
   final Widget? child;
+
   const CustomOutlinedButton({
     Key? key,
     VoidCallback? onTap,
     ButtonStyle? buttonStyle,
+    ButtonStyle? disabledButtonStyle,
+    bool? isDisabled,
     this.child,
     required String text,
   }) : super(
@@ -18,17 +21,20 @@ class CustomOutlinedButton extends BaseButton {
           text: text,
           onTap: onTap,
           buttonStyle: buttonStyle,
+          isDisabled: isDisabled,
+          disabledButtonStyle: disabledButtonStyle,
         );
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      style: buttonStyle,
-      onPressed: onTap,
-      child: child ?? Text(
-        text,
-        style: buttonTextStyle,
-      ),
+      style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
+      onPressed: (isDisabled ?? false) ? () {} : onTap,
+      child: child ??
+          Text(
+            text,
+            style: buttonTextStyle,
+          ),
     );
   }
 }
