@@ -1,6 +1,7 @@
 import 'package:demo_class_project/app_theme.dart';
 import 'package:demo_class_project/custom_elevated_button.dart';
 import 'package:demo_class_project/custom_text_button.dart';
+import 'package:demo_class_project/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'button_theme_helper.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: AppThemes.getTheme(),
+      theme: AppThemes.appLightTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -107,12 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
               buttonStyle: ButtonThemeHelper.elevatedButtonWhite,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(Icons.access_alarm_outlined),
-                  SizedBox(
+                children: [
+                  const Icon(Icons.access_alarm_outlined),
+                  const SizedBox(
                     width: 4,
                   ),
-                  Text("Elevated Button")
+                  Text(
+                    "Elevated Button",
+                    style: TextThemeHelper.displaySmallGreen600,
+                  )
                 ],
               ),
             )

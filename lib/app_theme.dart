@@ -30,7 +30,8 @@ class AppThemes {
     brightness: Brightness.light,
     platform: Platform.isAndroid ? TargetPlatform.android : TargetPlatform.iOS,
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    dividerTheme: const DividerThemeData(color: ColorConstant.gray, thickness: 1),
+    dividerTheme:
+        const DividerThemeData(color: ColorConstant.gray, thickness: 1),
     // Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
     outlinedButtonTheme: OutlinedButtonThemeData(
@@ -40,26 +41,26 @@ class AppThemes {
             padding: MaterialStateProperty.all<EdgeInsets>(
                 const EdgeInsets.all(4.0)))),
     textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        textStyle: MaterialStateProperty.all<TextStyle>(
-            const TextStyle(color: ColorConstant.strongYellow)),
-      )
-    ),
+        style: ButtonStyle(
+      textStyle: MaterialStateProperty.all<TextStyle>(
+          const TextStyle(color: ColorConstant.strongYellow)),
+    )),
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.lavender),
-      )
-    ),
-    textTheme:  const TextTheme(
-      displayLarge:
-          TextStyle(fontSize: 72.0, fontWeight: FontWeight.w500),
+        style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.lavender),
+    )),
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.w500),
+      displaySmall: TextStyle(
+        fontSize: 18,
+        color: ColorConstant.chineseBlack,
+      ),
       headlineMedium: TextStyle(
           fontSize: 24,
           color: ColorConstant.blanchedAlmond,
           fontWeight: FontWeight.w500,
           fontFamily: 'Manrope'),
-      titleLarge:
-          TextStyle(fontSize: 36.0, fontWeight: FontWeight.normal),
+      titleLarge: TextStyle(fontSize: 36.0, fontWeight: FontWeight.normal),
       titleSmall: TextStyle(
           fontSize: 12.0,
           color: ColorConstant.black,

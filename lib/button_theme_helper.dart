@@ -12,22 +12,19 @@ class ButtonThemeHelper {
 
   static ThemeData theme = AppThemes.getTheme();
 
-
   static get outlineButtonBlack => theme.outlinedButtonTheme.style!.copyWith(
       backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.black),
-      textStyle: MaterialStateProperty.all(
-          TextThemeHelper.bodySmallWhite800));
+      textStyle: MaterialStateProperty.all(TextThemeHelper.bodySmallWhite800));
 
   static get outlineButtonWhite => theme.outlinedButtonTheme.style!.copyWith(
       backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.white),
   );
 
   static get elevatedButtonWhite => theme.elevatedButtonTheme.style!.copyWith(
-          backgroundColor: MaterialStateProperty.all<Color>(
+      backgroundColor: MaterialStateProperty.all<Color>(
         ColorConstant.white,
       ),
-   textStyle: MaterialStateProperty.all(TextThemeHelper.bodySmallWhite800)
-  );
+      textStyle: MaterialStateProperty.all(TextThemeHelper.displaySmallGreen600));
 
   static get elevatedButtonBlack => theme.elevatedButtonTheme.style!.copyWith(
       backgroundColor:

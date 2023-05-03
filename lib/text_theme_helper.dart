@@ -17,4 +17,6 @@ class TextThemeHelper {
 
   static get bodySmallWhite800 => theme.textTheme.bodySmall!
       .copyWith(fontWeight: FontWeight.w800, color: ColorConstant.white);
+  static get displaySmallGreen600 => theme.textTheme.displaySmall!
+      .copyWith(fontWeight: FontWeight.w800, color: ColorConstant.green);
 }

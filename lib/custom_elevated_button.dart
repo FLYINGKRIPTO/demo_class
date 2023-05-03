@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends BaseButton {
   final Widget? child;
+
   const CustomElevatedButton({
     Key? key,
     VoidCallback? onTap,
@@ -25,7 +26,11 @@ class CustomElevatedButton extends BaseButton {
     return ElevatedButton(
       style: buttonStyle,
       onPressed: onTap,
-      child: child ?? Text(text),
+      child: child ??
+          Text(
+            text,
+            style: buttonTextStyle,
+          ),
     );
   }
 }

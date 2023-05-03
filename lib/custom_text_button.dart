@@ -1,4 +1,5 @@
 import 'package:demo_class_project/base_button.dart';
+import 'package:demo_class_project/button_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 /// Button which extends [BaseButton] class and returns an returns an [TextButton[ widget
@@ -24,13 +25,14 @@ class CustomTextButton extends BaseButton {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onTap,
-      style: buttonStyle,
+      style: buttonStyle ?? ButtonThemeHelper.textButtonBlack,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (prefixWidget != null) prefixWidget!,
           Text(
             text,
+            style: buttonTextStyle,
           ),
           if (suffixWidget != null) suffixWidget!,
         ],

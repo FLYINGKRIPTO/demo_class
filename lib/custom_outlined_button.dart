@@ -27,6 +27,7 @@ class CustomOutlinedButton extends BaseButton {
       onPressed: onTap,
       child: child ?? Text(
         text,
+        style: buttonTextStyle,
       ),
     );
   }

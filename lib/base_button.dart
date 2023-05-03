@@ -10,11 +10,14 @@ class BaseButton extends StatelessWidget {
   final String text;
   final VoidCallback? onTap;
   final ButtonStyle? buttonStyle;
+  final TextStyle? buttonTextStyle;
+
   const BaseButton({
     Key? key,
     required this.text,
     this.onTap,
     this.buttonStyle,
+    this.buttonTextStyle,
   }) : super(key: key);
 
   @override
