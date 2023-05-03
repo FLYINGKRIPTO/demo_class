@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 /// The [onTap] parameter is optional and specifies a function to be called when the button is tapped.
 /// The [buttonStyle] parameter is also optional and can be used to customize the button's appearance
 /// The [buttonTextStyle] parameter is also optional and can be used to set text style additionally
+/// The [isDisabled] property to be used when button needs to be in disabled state, inheriting button can perform required action
 
 class BaseButton extends StatelessWidget {
   final String text;
