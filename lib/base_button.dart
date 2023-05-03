@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 /// The [text] parameter is required and specifies the text to display on the button.
 /// The [onTap] parameter is optional and specifies a function to be called when the button is tapped.
 /// The [buttonStyle] parameter is also optional and can be used to customize the button's appearance
+/// The [buttonTextStyle] parameter is also optional and can be used to set text style additionally
 
 class BaseButton extends StatelessWidget {
   final String text;

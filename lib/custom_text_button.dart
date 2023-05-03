@@ -3,6 +3,7 @@ import 'package:demo_class_project/button_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 /// Button which extends [BaseButton] class and returns an returns an [TextButton[ widget
+/// takes [prefixWidget] and [suffixWidget] as additional parameters
 
 class CustomTextButton extends BaseButton {
   final Widget? prefixWidget;
