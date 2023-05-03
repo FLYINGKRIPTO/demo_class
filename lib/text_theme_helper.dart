@@ -12,10 +12,9 @@ class TextThemeHelper {
 
   static get bodySmallBlack400 => theme.textTheme.bodySmall!.copyWith(
         fontWeight: FontWeight.w400,
-        fontFamily: "Manrope",
         color: ColorConstant.lavender,
       );
 
-  static get bodySmallWhite800 => bodySmallBlack400.copyWith(
+  static get bodySmallWhite800 => theme.textTheme.bodySmall!.copyWith(
       fontWeight: FontWeight.w800, color: ColorConstant.white);
 }
