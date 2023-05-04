@@ -15,8 +15,23 @@ class TextThemeHelper {
         color: ColorConstant.black,
       );
 
-  static get bodySmallWhite800 => theme.textTheme.bodySmall!
+  static get bodySmallWhite800 => theme.textTheme.bodySmall!.roboto
       .copyWith(fontWeight: FontWeight.w800, color: ColorConstant.white);
-  static get displaySmallGreen600 => theme.textTheme.displaySmall!
+
+  static get displaySmallGreen600 => theme.textTheme.displaySmall!.manrope
       .copyWith(fontWeight: FontWeight.w800, color: ColorConstant.green);
+}
+
+extension on TextStyle {
+  TextStyle get roboto {
+    return copyWith(fontFamily: "Roboto");
+  }
+
+  TextStyle get  manrope {
+    return copyWith(fontFamily: "Manrope");
+  }
+
+  TextStyle get inter {
+    return copyWith(fontFamily: 'Inter');
+  }
 }
