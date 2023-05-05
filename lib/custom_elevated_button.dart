@@ -8,6 +8,8 @@ import 'button_theme_helper.dart';
 
 class CustomElevatedButton extends BaseButton {
   final Widget? child;
+  final Widget? icon;
+  final Widget? label;
 
   const CustomElevatedButton({
     Key? key,
@@ -19,6 +21,8 @@ class CustomElevatedButton extends BaseButton {
     double? height,
     double? width,
     this.child,
+    this.icon,
+    this.label,
     required String text,
   }) : super(
           key: key,
@@ -35,19 +39,25 @@ class CustomElevatedButton extends BaseButton {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      width: width,
-      decoration: gradient,
-      child: ElevatedButton(
-        style: elevatedButtonStyle,
-        onPressed: (isDisabled ?? false) ? () {} : onTap,
-        child: child ??
-            Text(
-              text,
-              style: buttonTextStyle,
-            ),
-      )
-    );
+        height: height,
+        width: width,
+        decoration: gradient,
+        child: isIconButton
+            ? ElevatedButton.icon(
+                style: elevatedButtonStyle,
+                onPressed: (isDisabled ?? false) ? () {} : onTap,
+                icon: icon ?? const SizedBox.shrink(),
+                label: label ?? const SizedBox.shrink(),
+              )
+            : ElevatedButton(
+                style: elevatedButtonStyle,
+                onPressed: (isDisabled ?? false) ? () {} : onTap,
+                child: child ??
+                    Text(
+                      text,
+                      style: buttonTextStyle,
+                    ),
+              ));
   }
 }
 
@@ -57,4 +67,6 @@ extension CustomElevatedButtonX on CustomElevatedButton {
       : (gradient == null)
           ? buttonStyle
           : ButtonThemeHelper.transparentButtonStyle;
+
+  bool get isIconButton => (icon != null && label != null);
 }

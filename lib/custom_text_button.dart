@@ -8,36 +8,52 @@ import 'package:flutter/material.dart';
 class CustomTextButton extends BaseButton {
   final Widget? prefixWidget;
   final Widget? suffixWidget;
+  final Widget? icon;
+  final Widget? label;
 
-  const CustomTextButton(
-      {Key? key,
-      required String text,
-      VoidCallback? onTap,
-      ButtonStyle? buttonStyle,
-      this.prefixWidget,
-      this.suffixWidget})
-      : super(
-            key: key,
-            text: text,
-            onTap: onTap,
-            buttonStyle: buttonStyle,);
+  const CustomTextButton({
+    Key? key,
+    required String text,
+    VoidCallback? onTap,
+    ButtonStyle? buttonStyle,
+    this.prefixWidget,
+    this.suffixWidget,
+    this.icon,
+    this.label,
+  }) : super(
+          key: key,
+          text: text,
+          onTap: onTap,
+          buttonStyle: buttonStyle,
+        );
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onTap,
-      style: buttonStyle ?? ButtonThemeHelper.textButtonBlack,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (prefixWidget != null) prefixWidget!,
-          Text(
-            text,
-            style: buttonTextStyle,
-          ),
-          if (suffixWidget != null) suffixWidget!,
-        ],
-      ),
-    );
+    return isIconButton
+        ? TextButton.icon(
+            onPressed: onTap,
+            style: buttonStyle ?? ButtonThemeHelper.textButtonBlack,
+            icon: icon!,
+            label: label!,
+          )
+        : TextButton(
+            onPressed: onTap,
+            style: buttonStyle ?? ButtonThemeHelper.textButtonBlack,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (prefixWidget != null) prefixWidget!,
+                Text(
+                  text,
+                  style: buttonTextStyle,
+                ),
+                if (suffixWidget != null) suffixWidget!,
+              ],
+            ),
+          );
   }
+}
+
+extension CustomTextButtonExt on CustomTextButton {
+  bool get isIconButton => (icon != null && label != null);
 }

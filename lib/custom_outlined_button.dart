@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 
 class CustomOutlinedButton extends BaseButton {
   final Widget? child;
+  final Widget? icon;
+  final Widget? label;
 
   const CustomOutlinedButton({
     Key? key,
@@ -19,6 +21,8 @@ class CustomOutlinedButton extends BaseButton {
     double? height,
     double? width,
     this.child,
+    this.icon,
+    this.label,
     required String text,
   }) : super(
           key: key,
@@ -37,15 +41,26 @@ class CustomOutlinedButton extends BaseButton {
     return SizedBox(
       height: height,
       width: width,
-      child: OutlinedButton(
-        style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
-        onPressed: (isDisabled ?? false) ? () {} : onTap,
-        child: child ??
-            Text(
-              text,
-              style: buttonTextStyle,
+      child: isIconButton
+          ? OutlinedButton.icon(
+              style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
+              onPressed: (isDisabled ?? false) ? () {} : onTap,
+              icon: icon!,
+              label: label!,
+            )
+          : OutlinedButton(
+              style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
+              onPressed: (isDisabled ?? false) ? () {} : onTap,
+              child: child ??
+                  Text(
+                    text,
+                    style: buttonTextStyle,
+                  ),
             ),
-      ),
     );
   }
+}
+
+extension CustomOutlineButtonX on CustomOutlinedButton {
+  bool get isIconButton => (icon != null && label != null);
 }
