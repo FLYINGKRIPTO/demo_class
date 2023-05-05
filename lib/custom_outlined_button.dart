@@ -1,4 +1,5 @@
 import 'package:demo_class_project/base_button.dart';
+import 'package:demo_class_project/button_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 /// Button which extends [BaseButton] class and returns an returns an [OutlinedButton[ widget
@@ -14,6 +15,7 @@ class CustomOutlinedButton extends BaseButton {
     ButtonStyle? buttonStyle,
     ButtonStyle? disabledButtonStyle,
     bool? isDisabled,
+    BoxDecoration? gradient,
     this.child,
     required String text,
   }) : super(
@@ -23,6 +25,7 @@ class CustomOutlinedButton extends BaseButton {
           buttonStyle: buttonStyle,
           isDisabled: isDisabled,
           disabledButtonStyle: disabledButtonStyle,
+          gradient: gradient,
         );
 
   @override

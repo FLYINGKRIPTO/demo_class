@@ -1,5 +1,7 @@
 import 'package:demo_class_project/base_button.dart';
+import 'package:demo_class_project/decoration_helper.dart';
 import 'package:flutter/material.dart';
+import 'button_theme_helper.dart';
 
 /// Button which extends [BaseButton] class and returns an returns an [ElevatedButton[ widget
 /// has and extra [child] parameter, for the addition of custom child widgets to the button, giving more flexibility to the user.
@@ -14,6 +16,7 @@ class CustomElevatedButton extends BaseButton {
     ButtonStyle? buttonStyle,
     ButtonStyle? disabledButtonStyle,
     bool? isDisabled,
+    BoxDecoration? gradient,
     this.child,
     required String text,
   }) : super(
@@ -23,18 +26,26 @@ class CustomElevatedButton extends BaseButton {
           buttonStyle: buttonStyle,
           isDisabled: isDisabled,
           disabledButtonStyle: disabledButtonStyle,
+          gradient: gradient,
         );
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
-      onPressed: (isDisabled ?? false) ? () {} : onTap,
-      child: child ??
-          Text(
-            text,
-            style: buttonTextStyle,
-          ),
+    return Container(
+      decoration: gradient,
+      child: ElevatedButton(
+        style: (isDisabled ?? false)
+            ? disabledButtonStyle
+            : (gradient == null)
+                ? buttonStyle
+                : ButtonThemeHelper.gradientButtonStyle,
+        onPressed: (isDisabled ?? false) ? () {} : onTap,
+        child: child ??
+            Text(
+              text,
+              style: buttonTextStyle,
+            ),
+      ),
     );
   }
 }

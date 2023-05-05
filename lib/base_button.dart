@@ -15,6 +15,8 @@ class BaseButton extends StatelessWidget {
   final ButtonStyle? disabledButtonStyle;
   final TextStyle? buttonTextStyle;
   final bool? isDisabled;
+  final BoxDecoration? gradient;
+  final BorderRadius? borderRadius;
 
   const BaseButton({
     Key? key,
@@ -23,7 +25,9 @@ class BaseButton extends StatelessWidget {
     this.buttonStyle,
     this.buttonTextStyle,
     this.isDisabled = false,
-    this.disabledButtonStyle
+    this.disabledButtonStyle,
+    this.gradient,
+    this.borderRadius,
   }) : super(key: key);
 
   @override

@@ -1,6 +1,7 @@
 import 'package:demo_class_project/app_theme.dart';
 import 'package:demo_class_project/custom_elevated_button.dart';
 import 'package:demo_class_project/custom_text_button.dart';
+import 'package:demo_class_project/decoration_helper.dart';
 import 'package:demo_class_project/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 12,
             ),
             CustomOutlinedButton(
-              text: "Outline Button",
+              text: "Outline Gradient Button",
               onTap: () {
                 const snackBar = SnackBar(
                   content: Text('Tapped Outlined Button 1'),
@@ -77,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
               },
               buttonStyle: ButtonThemeHelper.outlineButtonBlack,
+
             ),
             const SizedBox(
               height: 12,
@@ -95,9 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 12,
             ),
             CustomElevatedButton(
-              text: "Elevated Button",
+              text: "Elevated Gradient Button",
               onTap: () {},
               buttonStyle: ButtonThemeHelper.elevatedButtonBlack,
+              gradient: DecorationHelper.roundGreenGradient.r8,
             ),
             const SizedBox(
               height: 12,
