@@ -1,5 +1,4 @@
 import 'package:demo_class_project/base_button.dart';
-import 'package:demo_class_project/decoration_helper.dart';
 import 'package:flutter/material.dart';
 import 'button_theme_helper.dart';
 
@@ -40,18 +39,22 @@ class CustomElevatedButton extends BaseButton {
       width: width,
       decoration: gradient,
       child: ElevatedButton(
-        style: (isDisabled ?? false)
-            ? disabledButtonStyle
-            : (gradient == null)
-                ? buttonStyle
-                : ButtonThemeHelper.gradientButtonStyle,
+        style: elevatedButtonStyle,
         onPressed: (isDisabled ?? false) ? () {} : onTap,
         child: child ??
             Text(
               text,
               style: buttonTextStyle,
             ),
-      ),
+      )
     );
   }
+}
+
+extension CustomElevatedButtonX on CustomElevatedButton {
+  ButtonStyle get elevatedButtonStyle => (isDisabled ?? false)
+      ? disabledButtonStyle
+      : (gradient == null)
+          ? buttonStyle
+          : ButtonThemeHelper.transparentButtonStyle;
 }

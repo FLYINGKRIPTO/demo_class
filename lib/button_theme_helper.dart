@@ -67,7 +67,7 @@ class ButtonThemeHelper {
         ),
       );
 
-  static get gradientButtonStyle => theme.textButtonTheme.style!.copyWith(
+  static get transparentButtonStyle => theme.textButtonTheme.style!.copyWith(
         backgroundColor: MaterialStateProperty.all(ColorConstant.transparent),
         shadowColor: MaterialStateProperty.all(ColorConstant.transparent),
       );
