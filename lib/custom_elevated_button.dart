@@ -17,6 +17,8 @@ class CustomElevatedButton extends BaseButton {
     ButtonStyle? disabledButtonStyle,
     bool? isDisabled,
     BoxDecoration? gradient,
+    double? height,
+    double? width,
     this.child,
     required String text,
   }) : super(
@@ -27,11 +29,15 @@ class CustomElevatedButton extends BaseButton {
           isDisabled: isDisabled,
           disabledButtonStyle: disabledButtonStyle,
           gradient: gradient,
+          height: height,
+          width: width,
         );
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height,
+      width: width,
       decoration: gradient,
       child: ElevatedButton(
         style: (isDisabled ?? false)

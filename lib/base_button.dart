@@ -17,6 +17,8 @@ class BaseButton extends StatelessWidget {
   final bool? isDisabled;
   final BoxDecoration? gradient;
   final BorderRadius? borderRadius;
+  final double? height;
+  final double? width;
 
   const BaseButton({
     Key? key,
@@ -28,6 +30,8 @@ class BaseButton extends StatelessWidget {
     this.disabledButtonStyle,
     this.gradient,
     this.borderRadius,
+    this.height,
+    this.width,
   }) : super(key: key);
 
   @override

@@ -16,6 +16,8 @@ class CustomOutlinedButton extends BaseButton {
     ButtonStyle? disabledButtonStyle,
     bool? isDisabled,
     BoxDecoration? gradient,
+    double? height,
+    double? width,
     this.child,
     required String text,
   }) : super(
@@ -26,18 +28,24 @@ class CustomOutlinedButton extends BaseButton {
           isDisabled: isDisabled,
           disabledButtonStyle: disabledButtonStyle,
           gradient: gradient,
+          height: height,
+          width: width,
         );
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
-      onPressed: (isDisabled ?? false) ? () {} : onTap,
-      child: child ??
-          Text(
-            text,
-            style: buttonTextStyle,
-          ),
+    return SizedBox(
+      height: height,
+      width: width,
+      child: OutlinedButton(
+        style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
+        onPressed: (isDisabled ?? false) ? () {} : onTap,
+        child: child ??
+            Text(
+              text,
+              style: buttonTextStyle,
+            ),
+      ),
     );
   }
 }
