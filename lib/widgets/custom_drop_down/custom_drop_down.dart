@@ -4,22 +4,22 @@ import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 class CustomDropDown extends StatelessWidget {
-  const CustomDropDown({
-    super.key,
-    this.alignment,
-    this.width,
-    this.margin,
-    this.focusNode,
-    this.icon,
-    this.hintText,
-    this.prefix,
-    this.prefixConstraints,
-    this.items,
-    this.onChanged,
-    this.validator,
-    this.filled = false,
-    this.contentPadding,
-  });
+  const CustomDropDown(
+      {super.key,
+      this.alignment,
+      this.width,
+      this.margin,
+      this.focusNode,
+      this.icon,
+      this.hintText,
+      this.prefix,
+      this.prefixConstraints,
+      this.items,
+      this.onChanged,
+      this.validator,
+      this.filled = false,
+      this.contentPadding,
+      this.labelText});
 
   final Alignment? alignment;
 
@@ -46,6 +46,8 @@ class CustomDropDown extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
 
   final bool? filled;
+
+  final String? labelText;
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +95,8 @@ class CustomDropDown extends StatelessWidget {
         filled: filled,
         isDense: true,
         contentPadding: contentPadding,
+        labelText: labelText,
+        labelStyle: TextThemeHelper.displaySmallGreen600,
       );
 }
 
