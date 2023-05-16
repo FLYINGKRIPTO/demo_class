@@ -3,15 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 class CustomSwitch extends StatelessWidget {
-  const CustomSwitch(
-      {super.key,
-      this.alignment,
-      this.margin,
-      this.value,
-      this.onChanged,
-      this.height,
-      this.width,
-      this.borderRadius});
+  const CustomSwitch({
+    super.key,
+    this.alignment,
+    this.margin,
+    this.value,
+    this.onChanged,
+    this.height,
+    this.width,
+    this.borderRadius,
+    this.activeColor,
+    this.activeToggleColor,
+    this.inactiveColor,
+    this.inactiveToggleColor,
+    this.toggleSize,
+  });
 
   final Alignment? alignment;
 
@@ -24,6 +30,11 @@ class CustomSwitch extends StatelessWidget {
   final double? height;
   final double? width;
   final double? borderRadius;
+  final Color? activeColor;
+  final Color? activeToggleColor;
+  final Color? inactiveColor;
+  final Color? inactiveToggleColor;
+  final double? toggleSize;
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +52,13 @@ class CustomSwitch extends StatelessWidget {
           value: value ?? false,
           height: height ?? 24,
           width: width ?? 24,
-          toggleSize: 24,
-          borderRadius: 12,
-          activeColor: ColorConstant.blanchedAlmond,
-          activeToggleColor: ColorConstant.darkCyn,
-          inactiveColor: ColorConstant.aeroBlue,
-          inactiveToggleColor: ColorConstant.greyNeutral3,
+          toggleSize: toggleSize ?? 24,
+          borderRadius: borderRadius ?? 12,
+          activeColor: activeColor ?? ColorConstant.blanchedAlmond,
+          activeToggleColor: activeToggleColor ?? ColorConstant.darkCyn,
+          inactiveColor: inactiveColor ?? ColorConstant.aeroBlue,
+          inactiveToggleColor:
+              inactiveToggleColor ?? ColorConstant.greyNeutral3,
           onToggle: (value) {
             onChanged!(value);
           },

@@ -1,5 +1,4 @@
 import 'package:demo_class_project/core/app_color_helper.dart';
-import 'package:demo_class_project/border_decoration_helper.dart';
 import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +35,14 @@ class CustomTextFormField extends StatelessWidget {
 
   final EdgeInsets? contentPadding;
 
+  final bool? filled;
+
+  final Color? fillColor;
+
+  final TextStyle? hintTextStyle;
+
+  final TextStyle? textStyle;
+
   const CustomTextFormField(
       {Key? key,
       this.alignment,
@@ -53,6 +60,10 @@ class CustomTextFormField extends StatelessWidget {
       this.textInputAction = TextInputAction.next,
       this.textInputType = TextInputType.text,
       this.contentPadding,
+      this.filled = false,
+      this.fillColor = ColorConstant.cosmicLatte,
+      this.hintTextStyle,
+      this.textStyle,
       this.width})
       : super(key: key);
 
@@ -64,7 +75,7 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,
-        style: TextThemeHelper.displaySmallGreen600,
+        style: textStyle ?? TextThemeHelper.displaySmallGreen600,
         obscureText: isObscureText!,
         textInputAction: textInputAction,
         keyboardType: textInputType,
@@ -77,17 +88,51 @@ class CustomTextFormField extends StatelessWidget {
 
   InputDecoration get decoration => InputDecoration(
       hintText: hintText ?? "",
-      hintStyle: TextThemeHelper.displaySmallGreen600,
-      border: BorderDecorationHelper.greyCircularRadius12,
-      enabledBorder: BorderDecorationHelper.blackCircularRadius18,
-      focusedBorder: BorderDecorationHelper.greenCircularRadius24,
-      disabledBorder: BorderDecorationHelper.yellowCircularRadius12,
+      hintStyle: hintTextStyle ?? TextThemeHelper.displaySmallGreen600,
+      border: greyCircularRadius12,
+      enabledBorder: blackCircularRadius18,
+      focusedBorder: greenCircularRadius24,
+      disabledBorder: yellowCircularRadius12,
       prefixIcon: prefix,
       prefixIconConstraints: prefixConstraints,
       suffixIcon: suffix,
       suffixIconConstraints: suffixConstraints,
-      fillColor: ColorConstant.cosmicLatte,
-      filled: true,
+      fillColor: fillColor,
+      filled: filled,
       isDense: true,
       contentPadding: contentPadding);
+}
+
+extension ScreenStyleHelper on CustomTextFormField {
+  static OutlineInputBorder get yellowCircularRadius12 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(
+          color: ColorConstant.yellow,
+          width: 1,
+        ),
+      );
+
+  static OutlineInputBorder get greenCircularRadius24 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(24),
+        borderSide: const BorderSide(
+          color: ColorConstant.green,
+          width: 1,
+        ),
+      );
+
+  static OutlineInputBorder get greyCircularRadius12 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(
+          color: ColorConstant.greyNeutral3,
+          width: 1,
+        ),
+      );
+
+  static OutlineInputBorder get blackCircularRadius18 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(18),
+        borderSide: const BorderSide(
+          color: ColorConstant.black,
+          width: 1,
+        ),
+      );
 }

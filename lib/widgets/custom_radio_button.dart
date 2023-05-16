@@ -2,17 +2,19 @@ import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 class CustomRadioButton extends StatelessWidget {
-  CustomRadioButton(
-      {super.key,
-      this.alignment,
-      this.onChange,
-      this.isRightCheck = false,
-      this.iconSize,
-      this.value,
-      this.groupValue,
-      this.text,
-      this.width,
-      this.margin});
+  CustomRadioButton({
+    super.key,
+    this.alignment,
+    this.onChange,
+    this.isRightCheck = false,
+    this.iconSize,
+    this.value,
+    this.groupValue,
+    this.text,
+    this.width,
+    this.margin,
+    this.textStyle,
+  });
 
   final Alignment? alignment;
 
@@ -31,6 +33,8 @@ class CustomRadioButton extends StatelessWidget {
   final double? width;
 
   final EdgeInsetsGeometry? margin;
+
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +85,7 @@ class CustomRadioButton extends StatelessWidget {
   Widget get textWidget => Text(
         text ?? "",
         textAlign: TextAlign.center,
-        style: TextThemeHelper.displaySmallGreen600,
+        style: textStyle ?? TextThemeHelper.displaySmallGreen600,
       );
 
   Widget get radioWidget {

@@ -1,12 +1,11 @@
 import 'package:demo_class_project/core/app_theme.dart';
-import 'package:demo_class_project/widgets/custom_elevated_button/custom_elevated_button.dart';
-import 'package:demo_class_project/widgets/custom_text_button/custom_text_button.dart';
-import 'package:demo_class_project/decoration_helper.dart';
+import 'package:demo_class_project/widgets/custom_elevated_button.dart';
+import 'package:demo_class_project/widgets/custom_text_button.dart';
 import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
-import 'button_theme_helper.dart';
-import 'widgets/custom_outlined_button/custom_outlined_button.dart';
+import 'core/button_theme_helper.dart';
+import 'widgets/custom_outlined_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -95,12 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(
               height: 12,
-            ),
-            CustomElevatedButton(
-              text: "Elevated Gradient Button",
-              onTap: () {},
-              buttonStyle: ButtonThemeHelper.elevatedButtonBlack,
-              gradient: DecorationHelper.roundGreenGradient.r8,
             ),
             const SizedBox(
               height: 12,

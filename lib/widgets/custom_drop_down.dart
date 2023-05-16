@@ -1,5 +1,4 @@
 import 'package:demo_class_project/core/app_color_helper.dart';
-import 'package:demo_class_project/border_decoration_helper.dart';
 import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +18,11 @@ class CustomDropDown extends StatelessWidget {
       this.validator,
       this.filled = false,
       this.contentPadding,
+      this.fillColor,
+      this.focusColor,
+      this.prefixIconColor,
+      this.suffixIconColor,
+      this.hoverColor,
       this.labelText});
 
   final Alignment? alignment;
@@ -48,6 +52,16 @@ class CustomDropDown extends StatelessWidget {
   final bool? filled;
 
   final String? labelText;
+
+  final Color? fillColor;
+
+  final Color? focusColor;
+
+  final Color? prefixIconColor;
+
+  final Color? suffixIconColor;
+
+  final Color? hoverColor;
 
   @override
   Widget build(BuildContext context) {
@@ -86,12 +100,12 @@ class CustomDropDown extends StatelessWidget {
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
         hintStyle: TextThemeHelper.bodySmallBlack400,
-        border: BorderDecorationHelper.blackCircularRadius18,
-        enabledBorder: BorderDecorationHelper.blackCircularRadius18,
-        focusedBorder: BorderDecorationHelper.greenCircularRadius24,
+        border: blackCircularRadius18,
+        enabledBorder: yellowCircularRadius12,
+        focusedBorder: greenCircularRadius24,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
-        fillColor: ColorConstant.cosmicLatte,
+        fillColor: fillColor,
         filled: filled,
         isDense: true,
         contentPadding: contentPadding,
@@ -114,4 +128,38 @@ class SelectionPopupModel {
     this.value,
     this.isSelected = false,
   });
+}
+
+extension ScreenStyleHelper on CustomDropDown {
+  static OutlineInputBorder get greyCircularRadius12 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(
+          color: ColorConstant.greyNeutral3,
+          width: 1,
+        ),
+      );
+
+  static OutlineInputBorder get greenCircularRadius24 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(24),
+        borderSide: const BorderSide(
+          color: ColorConstant.green,
+          width: 1,
+        ),
+      );
+
+  static OutlineInputBorder get blackCircularRadius18 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(18),
+        borderSide: const BorderSide(
+          color: ColorConstant.black,
+          width: 1,
+        ),
+      );
+
+  static OutlineInputBorder get yellowCircularRadius12 => OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(
+          color: ColorConstant.yellow,
+          width: 1,
+        ),
+      );
 }

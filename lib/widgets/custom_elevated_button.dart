@@ -1,6 +1,6 @@
 import 'package:demo_class_project/core/base_button.dart';
 import 'package:flutter/material.dart';
-import '../../button_theme_helper.dart';
+import 'package:demo_class_project/core/button_theme_helper.dart';
 
 /// Button which extends [BaseButton] class and returns an returns an [ElevatedButton[ widget
 /// has and extra [child] parameter, for the addition of custom child widgets to the button, giving more flexibility to the user.

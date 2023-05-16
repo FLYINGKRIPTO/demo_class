@@ -1,8 +1,8 @@
 import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
-import 'core/app_color_helper.dart';
-import 'core/app_theme.dart';
+import 'app_color_helper.dart';
+import 'app_theme.dart';
 
 /// [ButtonThemeHelper] class contains static methods and properties that define the style of different types of buttons in the app.
 /// Each property defines the style of the corresponding button type with different properties such as background color, text style, and padding.

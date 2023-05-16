@@ -1,5 +1,4 @@
 import 'package:demo_class_project/core/app_color_helper.dart';
-import 'package:demo_class_project/decoration_helper.dart';
 import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +54,7 @@ class CustomCheckbox extends StatelessWidget {
         width: width,
         margin: margin ?? EdgeInsets.zero,
         padding: padding,
-        decoration: DecorationHelper.roundGreenGradient,
+        decoration: roundGreenGradient,
         child: isRightCheck! ? rightSideCheckbox : leftSideCheckbox,
       ),
     );
@@ -105,6 +104,19 @@ class CustomCheckbox extends StatelessWidget {
             vertical: -4,
             horizontal: -4,
           ),
+        ),
+      );
+}
+
+extension ScreenStyleHelper on CustomCheckbox {
+  BoxDecoration get roundGreenGradient => const BoxDecoration(
+        color: ColorConstant.white,
+        shape: BoxShape.rectangle,
+        gradient: LinearGradient(
+          colors: [
+            ColorConstant.lightCyn,
+            ColorConstant.darkCyn,
+          ],
         ),
       );
 }
