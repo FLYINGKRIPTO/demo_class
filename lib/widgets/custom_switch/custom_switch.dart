@@ -1,4 +1,4 @@
-import 'package:demo_class_project/app_color_helper.dart';
+import 'package:demo_class_project/core/app_color_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 

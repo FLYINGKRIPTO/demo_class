@@ -1,6 +1,6 @@
-import 'package:demo_class_project/app_color_helper.dart';
+import 'package:demo_class_project/core/app_color_helper.dart';
 import 'package:demo_class_project/border_decoration_helper.dart';
-import 'package:demo_class_project/text_theme_helper.dart';
+import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 class CustomDropDown extends StatelessWidget {

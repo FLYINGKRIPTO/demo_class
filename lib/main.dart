@@ -1,12 +1,12 @@
-import 'package:demo_class_project/app_theme.dart';
-import 'package:demo_class_project/custom_elevated_button.dart';
-import 'package:demo_class_project/custom_text_button.dart';
+import 'package:demo_class_project/core/app_theme.dart';
+import 'package:demo_class_project/widgets/custom_elevated_button/custom_elevated_button.dart';
+import 'package:demo_class_project/widgets/custom_text_button/custom_text_button.dart';
 import 'package:demo_class_project/decoration_helper.dart';
-import 'package:demo_class_project/text_theme_helper.dart';
+import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:flutter/material.dart';
 
 import 'button_theme_helper.dart';
-import 'custom_outlined_button.dart';
+import 'widgets/custom_outlined_button/custom_outlined_button.dart';
 
 void main() {
   runApp(const MyApp());
