@@ -96,11 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 12,
             ),
-            const SizedBox(
-              height: 12,
-            ),
             CustomElevatedButton(
-              text: "Elevated Button",
+              text: "Gradient Elevated Button",
               onTap: () {},
               buttonStyle: ButtonThemeHelper.elevatedButtonWhite,
               child: Row(
@@ -117,6 +114,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 12,
+            ),
+            CustomElevatedButton(
+              text: "Gradient Elevated Button",
+              onTap: () {},
+              buttonStyle: ButtonThemeHelper.elevatedButtonWhite,
+              gradient: const LinearGradient(colors: [
+                ColorConstant.cosmicLatte,
+                ColorConstant.yellow,
+              ]),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.access_alarm_outlined),
+                  const SizedBox(
+                    width: 4,
+                  ),
+                  Text(
+                    "Elevated Button",
+                    style: TextThemeHelper.displaySmallGreen600,
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
             CustomTextFormField(
               textStyle: TextThemeHelper.displaySmallGreen600,
               fillColor: ColorConstant.aeroBlue,
@@ -126,6 +151,10 @@ class _MyHomePageState extends State<MyHomePage> {
               //     ColorConstant.blanchedAlmond,
               //   ],
               // ),
+            ),
+            CustomTextButton(
+              text: "What",
+              buttonStyle: ButtonThemeHelper.textButtonBlack,
             )
           ],
         ),

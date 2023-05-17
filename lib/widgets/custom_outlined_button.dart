@@ -16,7 +16,6 @@ class CustomOutlinedButton extends BaseButton {
     ButtonStyle? buttonStyle,
     ButtonStyle? disabledButtonStyle,
     bool? isDisabled,
-    BoxDecoration? gradient,
     double? height,
     double? width,
     this.child,
@@ -30,16 +29,16 @@ class CustomOutlinedButton extends BaseButton {
           buttonStyle: buttonStyle,
           isDisabled: isDisabled,
           disabledButtonStyle: disabledButtonStyle,
-          gradient: gradient,
           height: height,
           width: width,
         );
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: height,
       width: width,
+      decoration: isGradient ? gradientDecoration : null,
       child: isIconButton
           ? OutlinedButton.icon(
               style: (isDisabled ?? false) ? disabledButtonStyle : buttonStyle,
@@ -62,4 +61,8 @@ class CustomOutlinedButton extends BaseButton {
 
 extension CustomOutlineButtonX on CustomOutlinedButton {
   bool get isIconButton => (icon != null && label != null);
+
+  BoxDecoration get gradientDecoration => BoxDecoration(gradient: gradient);
+
+  bool get isGradient => gradient != null;
 }

@@ -17,7 +17,7 @@ class CustomElevatedButton extends BaseButton {
     ButtonStyle? buttonStyle,
     ButtonStyle? disabledButtonStyle,
     bool? isDisabled,
-    BoxDecoration? gradient,
+    Gradient? gradient,
     double? height,
     double? width,
     this.child,
@@ -41,7 +41,7 @@ class CustomElevatedButton extends BaseButton {
     return Container(
         height: height,
         width: width,
-        decoration: gradient,
+        decoration: isGradient ? gradientDecoration : null,
         child: isIconButton
             ? ElevatedButton.icon(
                 style: elevatedButtonStyle,
@@ -69,4 +69,8 @@ extension CustomElevatedButtonX on CustomElevatedButton {
           : ButtonThemeHelper.transparentButtonStyle;
 
   bool get isIconButton => (icon != null && label != null);
+
+  BoxDecoration get gradientDecoration => BoxDecoration(gradient: gradient);
+
+  bool get isGradient => gradient != null;
 }

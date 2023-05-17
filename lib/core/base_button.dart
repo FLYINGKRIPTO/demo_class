@@ -15,7 +15,7 @@ class BaseButton extends StatelessWidget {
   final ButtonStyle? disabledButtonStyle;
   final TextStyle? buttonTextStyle;
   final bool? isDisabled;
-  final BoxDecoration? gradient;
+  final Gradient? gradient;
   final BorderRadius? borderRadius;
   final double? height;
   final double? width;

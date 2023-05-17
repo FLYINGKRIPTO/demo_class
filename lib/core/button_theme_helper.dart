@@ -18,6 +18,7 @@ class ButtonThemeHelper {
 
   static get outlineButtonWhite => theme.outlinedButtonTheme.style!.copyWith(
         backgroundColor: MaterialStateProperty.all<Color>(ColorConstant.white),
+
       );
 
   static get elevatedButtonWhite => theme.elevatedButtonTheme.style!.copyWith(
@@ -54,7 +55,7 @@ class ButtonThemeHelper {
           const EdgeInsets.all(2.0),
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextThemeHelper.bodySmallBlack400,
+          TextThemeHelper.displaySmallGreen600,
         ),
       );
 
