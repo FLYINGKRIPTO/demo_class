@@ -112,7 +112,8 @@ class CustomTextFormField extends StatelessWidget {
       fillColor: fillColor,
       filled: filled,
       isDense: true,
-      contentPadding: contentPadding);
+      contentPadding: contentPadding,
+  );
 }
 
 extension ScreenStyleHelper on CustomTextFormField {
