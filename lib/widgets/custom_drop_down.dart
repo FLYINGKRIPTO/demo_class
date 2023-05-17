@@ -23,6 +23,13 @@ class CustomDropDown extends StatelessWidget {
       this.prefixIconColor,
       this.suffixIconColor,
       this.hoverColor,
+      this.dropDownTextStyle,
+      this.defaultBorder,
+      this.enabledBorder,
+      this.focusedBorder,
+      this.disabledBorder,
+      this.labelTextStyle,
+      this.hintTextStyle,
       this.labelText});
 
   final Alignment? alignment;
@@ -53,6 +60,10 @@ class CustomDropDown extends StatelessWidget {
 
   final String? labelText;
 
+  final TextStyle? labelTextStyle;
+
+  final TextStyle? hintTextStyle;
+
   final Color? fillColor;
 
   final Color? focusColor;
@@ -62,6 +73,16 @@ class CustomDropDown extends StatelessWidget {
   final Color? suffixIconColor;
 
   final Color? hoverColor;
+
+  final TextStyle? dropDownTextStyle;
+
+  final InputBorder? defaultBorder;
+
+  final InputBorder? focusedBorder;
+
+  final InputBorder? disabledBorder;
+
+  final InputBorder? enabledBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +100,7 @@ class CustomDropDown extends StatelessWidget {
         child: DropdownButtonFormField<SelectionPopupModel>(
           focusNode: focusNode,
           icon: icon,
-          style: TextThemeHelper.bodySmallWhite800,
+          style: dropDownTextStyle ?? TextThemeHelper.bodySmallWhite800,
           decoration: decoration,
           items: items?.map((SelectionPopupModel item) {
             return DropdownMenuItem<SelectionPopupModel>(
@@ -99,10 +120,11 @@ class CustomDropDown extends StatelessWidget {
 
   InputDecoration get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: TextThemeHelper.bodySmallBlack400,
-        border: blackCircularRadius18,
-        enabledBorder: yellowCircularRadius12,
-        focusedBorder: greenCircularRadius24,
+        hintStyle: hintTextStyle ?? TextThemeHelper.bodySmallBlack400,
+        border: defaultBorder ?? blackCircularRadius18,
+        enabledBorder: enabledBorder ?? yellowCircularRadius12,
+        focusedBorder: focusedBorder ?? greenCircularRadius24,
+        disabledBorder: disabledBorder ?? greyCircularRadius12,
         prefixIcon: prefix,
         prefixIconConstraints: prefixConstraints,
         fillColor: fillColor,
@@ -110,7 +132,7 @@ class CustomDropDown extends StatelessWidget {
         isDense: true,
         contentPadding: contentPadding,
         labelText: labelText,
-        labelStyle: TextThemeHelper.displaySmallGreen600,
+        labelStyle: labelTextStyle ?? TextThemeHelper.displaySmallGreen600,
       );
 }
 

@@ -14,6 +14,8 @@ class CustomCheckbox extends StatelessWidget {
     this.width,
     this.margin,
     this.padding,
+    this.textStyle,
+    this.textAlignment,
   });
 
   final Alignment? alignment;
@@ -33,6 +35,10 @@ class CustomCheckbox extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
 
   final EdgeInsetsGeometry? padding;
+
+  final TextStyle? textStyle;
+
+  final TextAlign? textAlignment;
 
   @override
   Widget build(BuildContext context) {
@@ -87,8 +93,8 @@ class CustomCheckbox extends StatelessWidget {
 
   Widget get textWidget => Text(
         text ?? "",
-        textAlign: TextAlign.center,
-        style: TextThemeHelper.bodySmallBlack400,
+        textAlign: textAlignment??TextAlign.center,
+        style: textStyle ?? TextThemeHelper.bodySmallBlack400,
       );
 
   Widget get checkboxWidget => SizedBox(

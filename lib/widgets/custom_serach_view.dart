@@ -87,7 +87,7 @@ class CustomSearchView extends StatelessWidget {
 
   get decoration => InputDecoration(
         hintText: hintText ?? "",
-        hintStyle: TextThemeHelper.displaySmallGreen600,
+        hintStyle: hintTextStyle ??  TextThemeHelper.displaySmallGreen600,
         border: defaultBorderDecoration ?? yellowCircularRadius12,
         enabledBorder: enabledBorderDecoration ?? greenCircularRadius24,
         focusedBorder: focusedBorderDecoration ?? greyCircularRadius12,

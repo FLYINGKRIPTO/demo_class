@@ -43,29 +43,41 @@ class CustomTextFormField extends StatelessWidget {
 
   final TextStyle? textStyle;
 
-  const CustomTextFormField(
-      {Key? key,
-      this.alignment,
-      this.focusNode,
-      this.isObscureText,
-      this.prefixConstraints,
-      this.margin,
-      this.controller,
-      this.hintText,
-      this.suffixConstraints,
-      this.validator,
-      this.maxLines,
-      this.prefix,
-      this.suffix,
-      this.textInputAction = TextInputAction.next,
-      this.textInputType = TextInputType.text,
-      this.contentPadding,
-      this.filled = false,
-      this.fillColor = ColorConstant.cosmicLatte,
-      this.hintTextStyle,
-      this.textStyle,
-      this.width})
-      : super(key: key);
+  final OutlineInputBorder? defaultBorderDecoration;
+
+  final OutlineInputBorder? enabledBorderDecoration;
+
+  final OutlineInputBorder? focusedBorderDecoration;
+
+  final OutlineInputBorder? disabledBorderDecoration;
+
+  const CustomTextFormField({
+    Key? key,
+    this.alignment,
+    this.focusNode,
+    this.isObscureText,
+    this.prefixConstraints,
+    this.margin,
+    this.controller,
+    this.hintText,
+    this.suffixConstraints,
+    this.validator,
+    this.maxLines,
+    this.prefix,
+    this.suffix,
+    this.textInputAction = TextInputAction.next,
+    this.textInputType = TextInputType.text,
+    this.contentPadding,
+    this.filled = false,
+    this.fillColor = ColorConstant.cosmicLatte,
+    this.hintTextStyle,
+    this.textStyle,
+    this.width,
+    this.disabledBorderDecoration,
+    this.enabledBorderDecoration,
+    this.focusedBorderDecoration,
+    this.defaultBorderDecoration,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,10 +101,10 @@ class CustomTextFormField extends StatelessWidget {
   InputDecoration get decoration => InputDecoration(
       hintText: hintText ?? "",
       hintStyle: hintTextStyle ?? TextThemeHelper.displaySmallGreen600,
-      border: greyCircularRadius12,
-      enabledBorder: blackCircularRadius18,
-      focusedBorder: greenCircularRadius24,
-      disabledBorder: yellowCircularRadius12,
+      border: defaultBorderDecoration ?? greyCircularRadius12,
+      enabledBorder: enabledBorderDecoration ?? blackCircularRadius18,
+      focusedBorder: focusedBorderDecoration ?? greenCircularRadius24,
+      disabledBorder: disabledBorderDecoration ??  yellowCircularRadius12,
       prefixIcon: prefix,
       prefixIconConstraints: prefixConstraints,
       suffixIcon: suffix,
