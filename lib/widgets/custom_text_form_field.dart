@@ -51,11 +51,15 @@ class CustomTextFormField extends StatelessWidget {
 
   final OutlineInputBorder? disabledBorderDecoration;
 
+  final Gradient? textFieldBackgroundGradient;
+
+  final BorderRadius? borderRadius;
+
   const CustomTextFormField({
     Key? key,
     this.alignment,
     this.focusNode,
-    this.isObscureText,
+    this.isObscureText = false,
     this.prefixConstraints,
     this.margin,
     this.controller,
@@ -77,6 +81,8 @@ class CustomTextFormField extends StatelessWidget {
     this.enabledBorderDecoration,
     this.focusedBorderDecoration,
     this.defaultBorderDecoration,
+    this.borderRadius,
+    this.textFieldBackgroundGradient,
   }) : super(key: key);
 
   @override
@@ -84,40 +90,44 @@ class CustomTextFormField extends StatelessWidget {
     return Container(
       width: width ?? double.maxFinite,
       margin: margin,
+      decoration: isGradient ? roundGreenGradient: bgDecoration,
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,
         style: textStyle ?? TextThemeHelper.displaySmallGreen600,
-        obscureText: isObscureText!,
+        obscureText: isObscureText ?? false,
         textInputAction: textInputAction,
         keyboardType: textInputType,
         maxLines: maxLines ?? 1,
         decoration: decoration,
         validator: validator,
+
       ),
     );
   }
 
-  InputDecoration get decoration => InputDecoration(
-      hintText: hintText ?? "",
-      hintStyle: hintTextStyle ?? TextThemeHelper.displaySmallGreen600,
-      border: defaultBorderDecoration ?? greyCircularRadius12,
-      enabledBorder: enabledBorderDecoration ?? blackCircularRadius18,
-      focusedBorder: focusedBorderDecoration ?? greenCircularRadius24,
-      disabledBorder: disabledBorderDecoration ??  yellowCircularRadius12,
-      prefixIcon: prefix,
-      prefixIconConstraints: prefixConstraints,
-      suffixIcon: suffix,
-      suffixIconConstraints: suffixConstraints,
-      fillColor: fillColor,
-      filled: filled,
-      isDense: true,
-      contentPadding: contentPadding,
-  );
+  InputDecoration get decoration =>
+      InputDecoration(
+        hintText: hintText ?? "",
+        hintStyle: hintTextStyle ?? TextThemeHelper.displaySmallGreen600,
+        border: defaultBorderDecoration ?? greyCircularRadius12,
+        enabledBorder: enabledBorderDecoration ?? blackCircularRadius18,
+        focusedBorder: focusedBorderDecoration ?? greenCircularRadius24,
+        disabledBorder: disabledBorderDecoration ?? yellowCircularRadius12,
+        prefixIcon: prefix,
+        prefixIconConstraints: prefixConstraints,
+        suffixIcon: suffix,
+        suffixIconConstraints: suffixConstraints,
+        fillColor: fillColor,
+        filled: filled,
+        isDense: true,
+        contentPadding: contentPadding,
+      );
 }
 
 extension ScreenStyleHelper on CustomTextFormField {
-  static OutlineInputBorder get yellowCircularRadius12 => OutlineInputBorder(
+  OutlineInputBorder get yellowCircularRadius12 =>
+      OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: const BorderSide(
           color: ColorConstant.yellow,
@@ -125,7 +135,8 @@ extension ScreenStyleHelper on CustomTextFormField {
         ),
       );
 
-  static OutlineInputBorder get greenCircularRadius24 => OutlineInputBorder(
+  OutlineInputBorder get greenCircularRadius24 =>
+      OutlineInputBorder(
         borderRadius: BorderRadius.circular(24),
         borderSide: const BorderSide(
           color: ColorConstant.green,
@@ -133,7 +144,8 @@ extension ScreenStyleHelper on CustomTextFormField {
         ),
       );
 
-  static OutlineInputBorder get greyCircularRadius12 => OutlineInputBorder(
+  OutlineInputBorder get greyCircularRadius12 =>
+      OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: const BorderSide(
           color: ColorConstant.greyNeutral3,
@@ -141,11 +153,29 @@ extension ScreenStyleHelper on CustomTextFormField {
         ),
       );
 
-  static OutlineInputBorder get blackCircularRadius18 => OutlineInputBorder(
+  OutlineInputBorder get blackCircularRadius18 =>
+      OutlineInputBorder(
         borderRadius: BorderRadius.circular(18),
         borderSide: const BorderSide(
           color: ColorConstant.black,
           width: 1,
         ),
+      );
+
+  BoxDecoration get roundGreenGradient =>
+      BoxDecoration(
+        color: ColorConstant.white,
+        gradient: textFieldBackgroundGradient,
+      );
+
+  bool get isGradient => textFieldBackgroundGradient != null;
+
+  BoxDecoration get bgDecoration =>
+      BoxDecoration(
+        color: fillColor ?? ColorConstant.greyNeutral3,
+        borderRadius: borderRadius ??
+            BorderRadius.circular(
+              8,
+            ),
       );
 }

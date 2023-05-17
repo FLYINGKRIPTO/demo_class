@@ -1,7 +1,9 @@
+import 'package:demo_class_project/core/app_color_helper.dart';
 import 'package:demo_class_project/core/app_theme.dart';
 import 'package:demo_class_project/widgets/custom_elevated_button.dart';
 import 'package:demo_class_project/widgets/custom_text_button.dart';
 import 'package:demo_class_project/core/text_theme_helper.dart';
+import 'package:demo_class_project/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
 import 'core/button_theme_helper.dart';
@@ -77,7 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
               },
               buttonStyle: ButtonThemeHelper.outlineButtonBlack,
-
             ),
             const SizedBox(
               height: 12,
@@ -115,6 +116,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               ),
+            ),
+            CustomTextFormField(
+              textStyle: TextThemeHelper.displaySmallGreen600,
+              fillColor: ColorConstant.aeroBlue,
+              // textFieldBackgroundGradient: const LinearGradient(
+              //   colors: [
+              //     ColorConstant.lightCyn,
+              //     ColorConstant.blanchedAlmond,
+              //   ],
+              // ),
             )
           ],
         ),
