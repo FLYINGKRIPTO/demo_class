@@ -2,6 +2,9 @@ import 'package:demo_class_project/core/app_color_helper.dart';
 import 'package:demo_class_project/core/app_theme.dart';
 import 'package:demo_class_project/widgets/custom_checkbox.dart';
 import 'package:demo_class_project/widgets/custom_elevated_button.dart';
+import 'package:demo_class_project/widgets/custom_floating_button.dart';
+import 'package:demo_class_project/widgets/custom_radio_button.dart';
+import 'package:demo_class_project/widgets/custom_serach_view.dart';
 import 'package:demo_class_project/widgets/custom_switch.dart';
 import 'package:demo_class_project/widgets/custom_text_button.dart';
 import 'package:demo_class_project/core/text_theme_helper.dart';
@@ -41,6 +44,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool currentCheckBoxState = false;
   bool currentSwitchState = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            CustomSearchView(
+              fillColor: ColorConstant.blackOlive,
+            ),
             CustomTextButton(
               text: "Text Button 1",
               onTap: () {
@@ -127,7 +134,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               ),
-
             ),
             const SizedBox(
               height: 12,
@@ -178,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
               activeColor: ColorConstant.green5,
               value: currentSwitchState,
               activeText: "COOL BOSS",
-              onChanged: (f){
+              onChanged: (f) {
                 setState(() {
                   currentSwitchState = f;
                 });
@@ -189,13 +195,28 @@ class _MyHomePageState extends State<MyHomePage> {
               value: currentCheckBoxState,
               textStyle: TextThemeHelper.displaySmallGreen600,
               isRightCheck: true,
-              onChange: (t){
+              onChange: (t) {
                 setState(() {
                   currentCheckBoxState = t;
                 });
               },
               alignment: Alignment.bottomRight,
               text: "Data",
+            ),
+            CustomRadioButton(
+              onChange: (t) {},
+              text: "Lock it",
+            ),
+            CustomFloatingButton(
+              alignment: Alignment.bottomRight,
+              backgroundColor: ColorConstant.blanchedAlmond,
+              width: 100,
+              child: Row(
+                children: const [
+                  Icon(Icons.access_alarm_outlined),
+                  Text("T")
+                ],
+              ),
             )
           ],
         ),

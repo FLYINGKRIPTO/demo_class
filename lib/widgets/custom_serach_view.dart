@@ -105,7 +105,7 @@ class CustomSearchView extends StatelessWidget {
 
 /// Extension on [CustomSearchView] to facilitate inclusion of all types of decorations etc
 extension ScreenStyleHelper on CustomSearchView {
-  static OutlineInputBorder get yellowCircularRadius12 => OutlineInputBorder(
+   OutlineInputBorder get yellowCircularRadius12 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: const BorderSide(
           color: ColorConstant.yellow,
@@ -113,7 +113,7 @@ extension ScreenStyleHelper on CustomSearchView {
         ),
       );
 
-  static OutlineInputBorder get greenCircularRadius24 => OutlineInputBorder(
+   OutlineInputBorder get greenCircularRadius24 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(24),
         borderSide: const BorderSide(
           color: ColorConstant.green,
@@ -121,7 +121,7 @@ extension ScreenStyleHelper on CustomSearchView {
         ),
       );
 
-  static OutlineInputBorder get greyCircularRadius12 => OutlineInputBorder(
+   OutlineInputBorder get greyCircularRadius12 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: const BorderSide(
           color: ColorConstant.greyNeutral3,
@@ -129,7 +129,7 @@ extension ScreenStyleHelper on CustomSearchView {
         ),
       );
 
-  static OutlineInputBorder get blackCircularRadius18 => OutlineInputBorder(
+   OutlineInputBorder get blackCircularRadius18 => OutlineInputBorder(
         borderRadius: BorderRadius.circular(18),
         borderSide: const BorderSide(
           color: ColorConstant.black,
