@@ -5,7 +5,7 @@ class CustomRadioButton extends StatelessWidget {
   CustomRadioButton({
     super.key,
     this.alignment,
-    this.onChange,
+    required this.onChange,
     this.isRightCheck = false,
     this.iconSize,
     this.value,
@@ -18,7 +18,7 @@ class CustomRadioButton extends StatelessWidget {
 
   final Alignment? alignment;
 
-  final Function(String)? onChange;
+  final Function(String) onChange;
 
   final bool? isRightCheck;
 
@@ -48,7 +48,7 @@ class CustomRadioButton extends StatelessWidget {
 
   Widget get radioButtonWidget => InkWell(
         onTap: () {
-          onChange!(value!);
+          onChange(value!);
         },
         child: Container(
           width: width,
@@ -96,7 +96,7 @@ class CustomRadioButton extends StatelessWidget {
         value: value ?? "",
         groupValue: groupValue,
         onChanged: (value) {
-          onChange!(value!);
+          onChange(value!);
         },
         visualDensity: const VisualDensity(
           vertical: -4,

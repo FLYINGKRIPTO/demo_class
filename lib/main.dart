@@ -101,7 +101,17 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 12,
             ),
             CustomElevatedButton(
-              text: "Gradient Elevated Button",
+              text: " Elevated Button",
+              onTap: () {},
+              buttonStyle: ButtonThemeHelper.elevatedButtonWhite,
+              icon: const Icon(Icons.access_alarm_outlined),
+              label: const Text("Elevated Button Icon"),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            CustomElevatedButton(
+              text: " Elevated Button",
               onTap: () {},
               buttonStyle: ButtonThemeHelper.elevatedButtonWhite,
               child: Row(
@@ -117,6 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )
                 ],
               ),
+
             ),
             const SizedBox(
               height: 12,
@@ -137,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 4,
                   ),
                   Text(
-                    "Elevated Button",
+                    "Gradient Elevated Button",
                     style: TextThemeHelper.displaySmallGreen600,
                   )
                 ],
@@ -164,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 12,
             ),
             CustomSwitch(
-              activeColor: ColorConstant.blackOlive,
+              activeColor: ColorConstant.green5,
               value: currentSwitchState,
               activeText: "COOL BOSS",
               onChanged: (f){
