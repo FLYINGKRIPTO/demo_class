@@ -8,7 +8,7 @@ class CustomSwitch extends StatelessWidget {
     this.alignment,
     this.margin,
     this.value,
-    this.onChanged,
+    required this.onChanged,
     this.height,
     this.width,
     this.borderRadius,
@@ -17,6 +17,8 @@ class CustomSwitch extends StatelessWidget {
     this.inactiveColor,
     this.inactiveToggleColor,
     this.toggleSize,
+    this.activeText,
+    this.activeTextColor,
   });
 
   final Alignment? alignment;
@@ -25,7 +27,7 @@ class CustomSwitch extends StatelessWidget {
 
   final bool? value;
 
-  final Function(bool)? onChanged;
+  final Function(bool) onChanged;
 
   final double? height;
   final double? width;
@@ -35,6 +37,8 @@ class CustomSwitch extends StatelessWidget {
   final Color? inactiveColor;
   final Color? inactiveToggleColor;
   final double? toggleSize;
+  final String? activeText;
+  final Color? activeTextColor;
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +64,12 @@ class CustomSwitch extends StatelessWidget {
           inactiveToggleColor:
               inactiveToggleColor ?? ColorConstant.greyNeutral3,
           onToggle: (value) {
-            onChanged!(value);
+            onChanged(value);
           },
+          activeText: activeText,
+          activeTextColor: activeTextColor ?? ColorConstant.blackOlive,
+          showOnOff: true,
+
         ),
       );
 }

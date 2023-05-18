@@ -9,13 +9,14 @@ class CustomCheckbox extends StatelessWidget {
     this.isRightCheck = false,
     this.iconSize,
     this.value = false,
-    this.onChange,
+    required this.onChange,
     this.text,
     this.width,
     this.margin,
     this.padding,
     this.textStyle,
     this.textAlignment,
+    this.gradient,
   });
 
   final Alignment? alignment;
@@ -26,7 +27,7 @@ class CustomCheckbox extends StatelessWidget {
 
   bool? value;
 
-  final Function(bool)? onChange;
+  final Function(bool) onChange;
 
   final String? text;
 
@@ -39,6 +40,8 @@ class CustomCheckbox extends StatelessWidget {
   final TextStyle? textStyle;
 
   final TextAlign? textAlignment;
+
+  final Gradient? gradient;
 
   @override
   Widget build(BuildContext context) {
@@ -54,20 +57,19 @@ class CustomCheckbox extends StatelessWidget {
     return InkWell(
       onTap: () {
         value = !(value!);
-        onChange!(value!);
+        onChange(value!);
       },
       child: Container(
         width: width,
         margin: margin ?? EdgeInsets.zero,
         padding: padding,
-        decoration: roundGreenGradient,
+        decoration: isGradient ? roundGreenGradient : null,
         child: isRightCheck! ? rightSideCheckbox : leftSideCheckbox,
       ),
     );
   }
 
   Widget get rightSideCheckbox => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
             padding: const EdgeInsets.only(
@@ -93,7 +95,7 @@ class CustomCheckbox extends StatelessWidget {
 
   Widget get textWidget => Text(
         text ?? "",
-        textAlign: textAlignment??TextAlign.center,
+        textAlign: textAlignment ?? TextAlign.center,
         style: textStyle ?? TextThemeHelper.bodySmallBlack400,
       );
 
@@ -103,9 +105,9 @@ class CustomCheckbox extends StatelessWidget {
         child: Checkbox(
           value: value ?? false,
           onChanged: (value) {
-            onChange!(value!);
+            onChange(value!);
           },
-          checkColor: ColorConstant.green5,
+          checkColor: ColorConstant.blackOlive,
           visualDensity: const VisualDensity(
             vertical: -4,
             horizontal: -4,
@@ -125,4 +127,8 @@ extension ScreenStyleHelper on CustomCheckbox {
           ],
         ),
       );
+
+  BoxDecoration get gradientDecoration => BoxDecoration(gradient: gradient);
+
+  bool get isGradient => gradient != null;
 }

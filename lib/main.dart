@@ -1,6 +1,8 @@
 import 'package:demo_class_project/core/app_color_helper.dart';
 import 'package:demo_class_project/core/app_theme.dart';
+import 'package:demo_class_project/widgets/custom_checkbox.dart';
 import 'package:demo_class_project/widgets/custom_elevated_button.dart';
+import 'package:demo_class_project/widgets/custom_switch.dart';
 import 'package:demo_class_project/widgets/custom_text_button.dart';
 import 'package:demo_class_project/core/text_theme_helper.dart';
 import 'package:demo_class_project/widgets/custom_text_form_field.dart';
@@ -37,13 +39,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool currentCheckBoxState = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -155,6 +158,29 @@ class _MyHomePageState extends State<MyHomePage> {
             CustomTextButton(
               text: "What",
               buttonStyle: ButtonThemeHelper.textButtonBlack,
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            CustomSwitch(
+              activeColor: ColorConstant.blackOlive,
+              value: true,
+              activeText: "Swithc me",
+              onChanged: (f){
+
+              },
+            ),
+            CustomCheckbox(
+              value: currentCheckBoxState,
+              textStyle: TextThemeHelper.displaySmallGreen600,
+              isRightCheck: true,
+              onChange: (t){
+                setState(() {
+                  currentCheckBoxState = t;
+                });
+              },
+              alignment: Alignment.bottomRight,
+              text: "Data",
             )
           ],
         ),
