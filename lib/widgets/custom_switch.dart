@@ -19,6 +19,8 @@ class CustomSwitch extends StatelessWidget {
     this.toggleSize,
     this.activeText,
     this.activeTextColor,
+    this.inactiveText,
+    this.inactiveTextColor,
   });
 
   final Alignment? alignment;
@@ -39,6 +41,8 @@ class CustomSwitch extends StatelessWidget {
   final double? toggleSize;
   final String? activeText;
   final Color? activeTextColor;
+  final String? inactiveText;
+  final Color? inactiveTextColor;
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +58,8 @@ class CustomSwitch extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: FlutterSwitch(
           value: value ?? false,
-          height: height ?? 24,
-          width: width ?? 24,
+          height: height ?? 35,
+          width: width ?? 100,
           toggleSize: toggleSize ?? 24,
           borderRadius: borderRadius ?? 12,
           activeColor: activeColor ?? ColorConstant.blanchedAlmond,
@@ -67,9 +71,10 @@ class CustomSwitch extends StatelessWidget {
             onChanged(value);
           },
           activeText: activeText,
-          activeTextColor: activeTextColor ?? ColorConstant.blackOlive,
+          activeTextColor: activeTextColor ?? ColorConstant.whiteNew,
           showOnOff: true,
-
+          inactiveText: inactiveText,
+          inactiveTextColor: inactiveTextColor ?? ColorConstant.blackOlive,
         ),
       );
 }

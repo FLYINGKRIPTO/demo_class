@@ -40,6 +40,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool currentCheckBoxState = false;
+  bool currentSwitchState = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -164,11 +165,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             CustomSwitch(
               activeColor: ColorConstant.blackOlive,
-              value: true,
-              activeText: "Swithc me",
+              value: currentSwitchState,
+              activeText: "COOL BOSS",
               onChanged: (f){
-
+                setState(() {
+                  currentSwitchState = f;
+                });
               },
+              inactiveText: "BOSSSS",
             ),
             CustomCheckbox(
               value: currentCheckBoxState,
