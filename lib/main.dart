@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CustomSearchView(
+            const CustomSearchView(
               fillColor: ColorConstant.blackOlive,
             ),
             CustomTextButton(
@@ -142,23 +142,24 @@ class _MyHomePageState extends State<MyHomePage> {
               text: "Gradient Elevated Button",
               onTap: () {},
               buttonStyle: ButtonThemeHelper.elevatedButtonWhite,
+              buttonTextStyle: TextThemeHelper.bodySmallBlack400,
               gradient: const LinearGradient(colors: [
                 ColorConstant.cosmicLatte,
                 ColorConstant.yellow,
               ]),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.access_alarm_outlined),
-                  const SizedBox(
-                    width: 4,
-                  ),
-                  Text(
-                    "Gradient Elevated Button",
-                    style: TextThemeHelper.displaySmallGreen600,
-                  )
-                ],
-              ),
+              // child: Row(
+              //   mainAxisSize: MainAxisSize.min,
+              //   children: [
+              //     const Icon(Icons.access_alarm_outlined),
+              //     const SizedBox(
+              //       width: 4,
+              //     ),
+              //     Text(
+              //       "Gradient Elevated Button",
+              //       style: TextThemeHelper.bodySmallWhite800,
+              //     )
+              //   ],
+              // ),
             ),
             const SizedBox(
               height: 12,

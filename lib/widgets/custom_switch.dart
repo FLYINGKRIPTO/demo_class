@@ -1,6 +1,6 @@
 import 'package:demo_class_project/core/app_color_helper.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 
 class CustomSwitch extends StatelessWidget {
   const CustomSwitch({
@@ -21,6 +21,7 @@ class CustomSwitch extends StatelessWidget {
     this.activeTextColor,
     this.inactiveText,
     this.inactiveTextColor,
+    this.isAndroid = true,
   });
 
   final Alignment? alignment;
@@ -43,6 +44,7 @@ class CustomSwitch extends StatelessWidget {
   final Color? activeTextColor;
   final String? inactiveText;
   final Color? inactiveTextColor;
+  final bool isAndroid;
 
   @override
   Widget build(BuildContext context) {
@@ -56,25 +58,23 @@ class CustomSwitch extends StatelessWidget {
 
   Widget get switchWidget => Padding(
         padding: margin ?? EdgeInsets.zero,
-        child: FlutterSwitch(
-          value: value ?? false,
-          height: height ?? 35,
-          width: width ?? 100,
-          toggleSize: toggleSize ?? 24,
-          borderRadius: borderRadius ?? 12,
-          activeColor: activeColor ?? ColorConstant.blanchedAlmond,
-          activeToggleColor: activeToggleColor ?? ColorConstant.darkCyn,
-          inactiveColor: inactiveColor ?? ColorConstant.aeroBlue,
-          inactiveToggleColor:
-              inactiveToggleColor ?? ColorConstant.greyNeutral3,
-          onToggle: (value) {
-            onChanged(value);
-          },
-          activeText: activeText,
-          activeTextColor: activeTextColor ?? ColorConstant.whiteNew,
-          showOnOff: true,
-          inactiveText: inactiveText,
-          inactiveTextColor: inactiveTextColor ?? ColorConstant.blackOlive,
-        ),
+        child: isAndroid
+            ? Switch(
+                value: value ?? false,
+                inactiveThumbColor:
+                    inactiveToggleColor ?? ColorConstant.blackOlive,
+                activeColor: activeColor ?? ColorConstant.green5,
+                onChanged: (bool value) {
+                  onChanged(value);
+                },
+              )
+            : CupertinoSwitch(
+                value: value ?? false,
+                trackColor: inactiveToggleColor ?? ColorConstant.blackOlive,
+                activeColor: activeColor ?? ColorConstant.green5,
+                onChanged: (bool value) {
+                  onChanged(value);
+                },
+              ),
       );
 }

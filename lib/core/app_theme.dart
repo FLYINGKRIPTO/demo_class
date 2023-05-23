@@ -82,9 +82,7 @@ class AppThemes {
           fontWeight: FontWeight.normal,
           fontFamily: 'Manrope'),
       bodySmall: TextStyle(
-          fontSize: 8.0,
-          fontWeight: FontWeight.w400,
-          fontFamily: 'Manrope'),
+          fontSize: 8.0, fontWeight: FontWeight.w400, fontFamily: 'Manrope'),
     ),
   );
   static const ColorScheme lightColorScheme = ColorScheme(

@@ -101,7 +101,6 @@ class CustomTextFormField extends StatelessWidget {
         maxLines: maxLines ?? 1,
         decoration: decoration,
         validator: validator,
-
       ),
     );
   }
